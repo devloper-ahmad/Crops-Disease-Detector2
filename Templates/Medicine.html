@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Poppins:ital,wght@0,400;0,500;1,500&family=Righteous&family=Unbounded:wght@900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <title>Document</title>
+</head>
+<style>
+    
+  
+    #potaotoicon{
+        height: 30px;
+        width: 50px;
+    }
+    .navbar div ul li a:hover{
+        background-color: rgb(0, 255, 60);
+        border-radius:13px ;
+        color: rgb(0, 0, 0);
+
+    }
+    .col-sm-3 div button:hover{
+      color: rgba(2, 2, 2, 0.297);
+    }
+    .navbar div ul  {
+      margin-right:30%;
+
+    }
+</style>
+<body>
+  <nav class="navbar navbar-expand-lg bg-success" >
+    <img src="/static/img/Potato.png" alt="" style="height: 40px;" class="position-absolute top-50 end-0 translate-middle img-fluid">
+<div class="container-fluid"   id="navbar">
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    
+  </button>
+ 
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item me-2">
+      <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/%2F" style="color:white; font-family: 'Poppins', sans-serif; font-size: 20px;   
+      
+      ">Home</a>
+    </li>
+   
+    <li class="nav-item dropdown"  >
+      <a class="nav-link dropdown-toggle me-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"  style="color:white; font-family: 'Poppins', sans-serif; font-size: 20px;">
+        Disease
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/diseasedetail/1">Black Scruf</a></li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/diseasedetail/2">Pink Root</a></li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/diseasedetail/3">LateBlight</a></li>
+      </ul>
+    </li>
+      <li class="nav-item me-2">
+        <a class="nav-link" href="http://127.0.0.1:8000/Research1/" style="color:white; font-family: 'Poppins', sans-serif; font-size: 20px;">Reasearch</a>
+      </li>
+
+    
+
+    <li class="nav-item dropdown"  >
+      <a class="nav-link dropdown-toggle me-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"  style="color:white; font-family: 'Poppins', sans-serif; font-size: 20px;border-radius:13px ;background-color: rgb(0, 255, 60);">
+        Medicines
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/1">Amistar Top</a></li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/2">CELEST</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/11">Revus</a></li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/5">Enrich</li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/6">GRAMOXONE</li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/9">Nayapotash</li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/10">NayaZinc</li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/7">Isabion</li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/12">Solubour</li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/3">Dragon</li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/8">Miravis Duo</li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/4">Dual Gold</li>
+        
+
+        
+        
+        
+         
+        
+      </ul>
+    </li>
+  <a href="{%url 'login'%}" style="position: absolute; left:75%"><button type="button" class="btn btn-light">Logout</button></a>
+  </ul>
+  
+</div>
+</div>
+</nav>
+
+<form class="d-flex col-sm-4 mb-sm-0 position-absolute end-50" role="search">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
+  <h1 class="mt-5 ms-5 ">Medicines </h1>
+
+  <div class="container text-center mt-5 "  >
+    <div class="row">
+      <div class="col-sm-3 mb-sm-0 d-flex justify-content-evenly" >
+        <div class="" style="width: 40rem; box-shadow: 5px 5px 15px rgb(170, 168, 168); border-radius: 13px; cursor: pointer;" id="medicine" onmouseover="myFunction7()" onmouseout="myFunction8()">
+          <img src="/static/img/Amistar top logo.png" class="card-img-top img-fluid " alt="..." style="width: 200px;">
+
+          <img src="/static/img/Amistar Top.png" class="card-img-top img-fluid mt-3" alt="..." style="width: 105px;">
+          <div class="card-body">
+            <h5 class="card-title mt-3 " style="font-weight: bolder;">AMISTAR Top</h5>
+            <p class="card-text mt-3 text-center"  style=" font-family: 'Poppins', sans-serif;">AMISTAR Technology is the world’s best-selling fungicide. .</p>
+            <a href="#" class="btn btn-success" style=" font-family: 'Poppins', sans-serif;">Read More
+              <i class="bi bi-forward ms-2 mt-2"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 mb-sm-0 d-flex justify-content-evenly">
+        <div class="" style="width: 40rem; box-shadow: 5px 5px 15px rgb(170, 168, 168); border-radius: 13px; cursor: pointer;"id="medicine2" onmouseover="myFunction9()" onmouseout="myFunction10()">
+          <img src="/static/img/CELEST LOGO.png" class="card-img-top img-fluid " alt="..." style="width: 200px;">
+
+          <img src="/static/img/CELEST.png" class="card-img-top img-fluid mt-1" alt="..." style="width: 76px;">
+          <div class="card-body">
+            <h5 class="card-title mt-3" style="font-weight: bolder;">CELEST</h5>
+            <p class="card-text mt-3 text-center"  style=" font-family: 'Poppins', sans-serif;">A broad spectrum seed treatment solution which is highly effective on potato.</p>
+            <a href="#" class="btn btn-success" style=" font-family: 'Poppins', sans-serif;">Read More
+              <i class="bi bi-forward ms-2 mt-2"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 mb-sm-0 d-flex justify-content-evenly">
+        <div class="" style="width: 40rem; box-shadow: 5px 5px 15px rgb(170, 168, 168); border-radius: 13px; cursor: pointer;" id="dragon" onmouseover="mydragon()" onmouseout="mydragon2()">
+          <img src="/static/img/dragon logo.png" class="card-img-top img-fluid " alt="..." style="width: 200px;">
+
+          <img src="/static/img/dragon.png" class="card-img-top img-fluid mt-3" alt="..." style="width: 133px;">
+          <div class="card-body">
+            <h5 class="card-title mt-3" style="font-weight: bolder;">Dragon</h5>
+            <p class="card-text mt-3 text-center"  style=" font-family: 'Poppins', sans-serif;">A broad spectrum seed treatment solution which is highly effective on potato.</p>
+            <a href="#" class="btn btn-success " style=" font-family: 'Poppins', sans-serif;">Read More
+              <i class="bi bi-forward ms-2 mt-2"></i></a>
+          </div>
+        </div>
+       
+      </div>
+      <div class="col-sm-3 mb-sm-0 d-flex justify-content-evenly">
+        <div class="" style="width: 40rem; box-shadow: 5px 5px 15px rgb(170, 168, 168); border-radius: 13px; cursor: pointer;" id="Dualgold" onmouseover="myDualgold()" onmouseout="myDualgold2()">
+          <img src="/static/img/DualGold logo.png" class="card-img-top img-fluid " alt="..." style="width: 200px;">
+
+          <img src="/static/img/Dual Gold.png" class="card-img-top img-fluid mt-3" alt="..." style="width: 80px;">
+          <div class="card-body">
+            <h5 class="card-title mt-3" style="font-weight: bolder;">Dual Gold</h5>
+            <p class="card-text mt-3 text-center"  style=" font-family: 'Poppins', sans-serif;">DUAL® GOLD 960 EC is a pre-emergence herbicide with formulation of and emulsifying concentrate .</p>
+            <a href="#" class="btn btn-success mb-0" style=" font-family: 'Poppins', sans-serif;">Read More
+              <i class="bi bi-forward ms-2 mt-2"></i></a>
+          </div>
+        </div>
+       
+        
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-sm-3 mb-sm-0 d-flex justify-content-evenly">
+        <div class="" style="width: 40rem; box-shadow: 5px 5px 15px rgb(170, 168, 168); border-radius: 13px; cursor: pointer;" id="Enrich" onmouseover="myEnrich()" onmouseout="myEnrich2()">
+          <img src="/static/img/Enrich logo.png" class="card-img-top img-fluid " alt="..." style="width: 200px;">
+
+          <img src="/static/img/Enrich.png" class="card-img-top img-fluid mt-3" alt="..." style="width: 147px;">
+          <div class="card-body">
+            <h5 class="card-title mt-3" style="font-weight: bolder;">Enrich</h5>
+            <p class="card-text mt-3 text-center"  style=" font-family: 'Poppins', sans-serif;">Enrich with the active ingredient HUMIC ACID is applied to sandy soil .</p>
+            <a href="#" class="btn btn-success mb-0" style=" font-family: 'Poppins', sans-serif;">Read More
+              <i class="bi bi-forward ms-2 mt-2"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 mb-sm-0 d-flex justify-content-evenly">
+        <div class="" style="width: 40rem; box-shadow: 5px 5px 15px rgb(170, 168, 168); border-radius: 13px; cursor: pointer;" id="Gramoxone" onmouseover="myGramoxone()"onmouseout="myGramoxone2()">
+          <img src="/static/img/Gramoxone logo.png" class="card-img-top img-fluid " alt="..." style="width: 200px;">
+
+          <img src="/static/img/Gramoxone.png" class="card-img-top img-fluid mt-3" alt="..." style="width: 80px;">
+          <div class="card-body">
+            <h5 class="card-title mt-3" style="font-weight: bolder;">Gramoxone</h5>
+            <p class="card-text mt-3 text-center"  style=" font-family: 'Poppins', sans-serif;">GRAMOXONE is a unique, fast acting, non-selective, contact herbicide for control of most fibrous rooted grasses .</p>
+            <a href="#" class="btn btn-success mb-0" style=" font-family: 'Poppins', sans-serif;">Read More
+              <i class="bi bi-forward ms-2 mt-2"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 mb-sm-0 d-flex justify-content-evenly">
+        <div class="" style="width: 40rem; box-shadow: 5px 5px 15px rgb(170, 168, 168); border-radius: 13px; cursor: pointer;" id="Isabion" onmouseover="myIsabion()"onmouseout="myIsabion2()">
+          <img src="/static/img/isabion logo.png" class="card-img-top img-fluid " alt="..." style="width: 200px;">
+
+          <img src="/static/img/Isabion.png" class="card-img-top img-fluid mt-3" alt="..." style="width: 90px;">
+          <div class="card-body">
+            <h5 class="card-title mt-3" style="font-weight: bolder;">Isabion</h5>
+            <p class="card-text mt-3 text-center"  style=" font-family: 'Poppins', sans-serif;">Isabion is a product of natural origin for the balanced nutrition of plants.</p>
+            <a href="#" class="btn btn-success mb-0" style=" font-family: 'Poppins', sans-serif;">Read More
+              <i class="bi bi-forward ms-2 mt-2"></i></a>
+          </div>
+        </div>
+     
+      </div>
+      <div class="col-sm-3 mb-sm-0 d-flex justify-content-evenly">
+        <div class="" style="width: 40rem; box-shadow: 5px 5px 15px rgb(170, 168, 168); border-radius: 13px; cursor: pointer;" id="Miravisduo" onmouseover="myMiravisduo()"onmouseout="myMiravisduo2()">
+          <img src="/static/img/Miravis duo logo.png" class="card-img-top img-fluid " alt="..." style="width: 200px;">
+
+          <img src="/static/img/Miravis duo.png" class="card-img-top img-fluid mt-3" alt="..." style="width: 77px;">
+          <div class="card-body">
+            <h5 class="card-title mt-3" style="font-weight: bolder;">Miravis duo</h5>
+            <p class="card-text mt-3 text-center"  style=" font-family: 'Poppins', sans-serif;">Miravis Duo is a broad-spectrum, preventative fungicide for the control of many important plant diseases.</p>
+            <a href="#" class="btn btn-success mb-0" style=" font-family: 'Poppins', sans-serif;">Read More
+              <i class="bi bi-forward ms-2 mt-2"></i></a>
+          </div>
+        </div>
+     
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-sm-3 mb-sm-0 d-flex justify-content-evenly">
+        <div class="" style="width: 40rem; box-shadow: 5px 5px 15px rgb(170, 168, 168); border-radius: 13px; cursor: pointer;"  id="Nayapotash" onmouseover="myNayapotash()"onmouseout="myNayapotash2()">
+          <img src="/static/img/Naya Potash logo.png" class="card-img-top img-fluid " alt="..." style="width: 200px;">
+
+          <img src="/static/img/Naya Potash.png" class="card-img-top img-fluid mt-3" alt="..." style="width: 77px;">
+          <div class="card-body">
+            <h5 class="card-title mt-3" style="font-weight: bolder;">Naya Potash</h5>
+            <p class="card-text mt-3 text-center"  style=" font-family: 'Poppins', sans-serif;">Naya Potash is a supplement for potassium deficient plants. </p>
+            <a href="#" class="btn btn-success mb-0" style=" font-family: 'Poppins', sans-serif;">Read More
+              <i class="bi bi-forward ms-2 mt-2"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 mb-sm-0 d-flex justify-content-evenly">
+        <div class="" style="width: 40rem; box-shadow: 5px 5px 15px rgb(170, 168, 168); border-radius: 13px; cursor: pointer;"  id="Nayazinc" onmouseover="myNayazinc()"onmouseout="myNayazinc2()">
+          <img src="/static/img/Naya Zinc logo.png" class="card-img-top img-fluid " alt="..." style="width: 200px;">
+
+          <img src="/static/img/Naya Zinc.png" class="card-img-top img-fluid mt-3" alt="..." style="width: 140px;">
+          <div class="card-body">
+            <h5 class="card-title mt-3" style="font-weight: bolder;">Naya Zinc Plus 27%</h5>
+            <p class="card-text mt-3 text-center"  style=" font-family: 'Poppins', sans-serif;">A widely used granular fertilizers because of its high solubility . </p>
+            <a href="#" class="btn btn-success mb-0" style=" font-family: 'Poppins', sans-serif;">Read More
+              <i class="bi bi-forward ms-2 mt-2"></i></a>
+          </div>
+        </div>
+      
+      </div>
+      <div class="col-sm-3 mb-sm-0 d-flex justify-content-evenly">
+        <div class="" style="width: 40rem; box-shadow: 5px 5px 15px rgb(170, 168, 168); border-radius: 13px; cursor: pointer;" id="Revus" onmouseover="myRevus()"onmouseout="myRevus2()">
+          <img src="/static/img/Revus logo.png" class="card-img-top img-fluid " alt="..." style="width: 200px;">
+
+          <img src="/static/img/Revus.png" class="card-img-top img-fluid mt-3" alt="..." style="width: 80px;">
+          <div class="card-body">
+            <h5 class="card-title mt-3" style="font-weight: bolder;">Revus</h5>
+            <p class="card-text mt-3 text-center"  style=" font-family: 'Poppins', sans-serif;">A unique contact and translaminar fungicide used for management of downy mildew .</p>
+            <a href="#" class="btn btn-success mb-0" style=" font-family: 'Poppins', sans-serif;">Read More
+              <i class="bi bi-forward ms-2 mt-2"></i></a>
+          </div>
+        </div>
+  
+      </div>
+      <div class="col-sm-3 mb-sm-0 d-flex justify-content-evenly">
+        <div class="" style="width: 40rem; box-shadow: 5px 5px 15px rgb(170, 168, 168); border-radius: 13px; cursor: pointer;" id="solubour" onmouseover="mysolubour()"onmouseout="mysolubour2()">
+          <img src="/static/img/Solubor logo.png" class="card-img-top img-fluid " alt="..." style="width: 200px;">
+
+          <img src="/static/img/Solubor.png" class="card-img-top img-fluid mt-3" alt="..." style="width: 80px;">
+          <div class="card-body">
+            <h5 class="card-title mt-3" style="font-weight: bolder;">Solubour</h5>
+            <p class="card-text mt-3 text-center"  style=" font-family: 'Poppins', sans-serif;">The only pure, 100% water soluble micronutrient that is engineered to meet crops boron  .</p>
+            <a href="#" class="btn btn-success mb-0" style=" font-family: 'Poppins', sans-serif;">Read More
+              <i class="bi bi-forward ms-2 mt-2"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    
+</body>
+</html>
+<script>
+function myFunction7() {
+    document.getElementById("medicine").style.boxShadow = "0px 0px 15px Green";
+  
+  
+  }
+  function myFunction8() {
+    document.getElementById("medicine").style.boxShadow = "0px 0px 0px ";
+  
+  
+  }
+  
+  function myFunction9() {
+    document.getElementById("medicine2").style.boxShadow = "0px 0px 15px Green";
+  
+  
+  }
+  function myFunction10() {
+    document.getElementById("medicine2").style.boxShadow = "0px 0px 0px ";
+  
+  
+  }
+  function mydragon() {
+    document.getElementById("dragon").style.boxShadow = "0px 0px 15px Green";
+  
+  
+  }
+  function mydragon2() {
+    document.getElementById("dragon").style.boxShadow = "0px 0px 0px ";
+  
+  
+  }
+  function myDualgold() {
+    document.getElementById("Dualgold").style.boxShadow = "0px 0px 15px Green";
+  
+  
+  }
+  function myDualgold2() {
+    document.getElementById("Dualgold").style.boxShadow = "0px 0px 0px ";
+  
+  
+  }
+  function myEnrich() {
+    document.getElementById("Enrich").style.boxShadow = "0px 0px 15px Green";
+  
+  
+  }
+  function myEnrich2() {
+    document.getElementById("Enrich").style.boxShadow = "0px 0px 0px ";
+  
+  
+  }
+  function myGramoxone() {
+    document.getElementById("Gramoxone").style.boxShadow = "0px 0px 15px Green";
+  
+  
+  }
+  function myGramoxone2() {
+    document.getElementById("Gramoxone").style.boxShadow = "0px 0px 0px ";
+  
+  
+  }
+  function myIsabion() {
+    document.getElementById("Isabion").style.boxShadow = "0px 0px 15px Green";
+  
+  
+  }
+  function myIsabion2() {
+    document.getElementById("Isabion").style.boxShadow = "0px 0px 0px ";
+  
+  
+  }
+  function myMiravisduo() {
+    document.getElementById("Miravisduo").style.boxShadow = "0px 0px 15px Green";
+  
+  
+  }
+  function myMiravisduo2() {
+    document.getElementById("Miravisduo").style.boxShadow = "0px 0px 0px ";
+  
+  
+  }
+  function myNayapotash() {
+    document.getElementById("Nayapotash").style.boxShadow = "0px 0px 15px Green";
+  
+  
+  }
+  function myNayapotash2() {
+    document.getElementById("Nayapotash").style.boxShadow = "0px 0px 0px ";
+  
+  
+  }
+  function myNayazinc() {
+    document.getElementById("Nayazinc").style.boxShadow = "0px 0px 15px Green";
+  
+  
+  }
+  function myNayazinc2() {
+    document.getElementById("Nayazinc").style.boxShadow = "0px 0px 0px ";
+  
+  
+  }
+  function myRevus() {
+    document.getElementById("Revus").style.boxShadow = "0px 0px 15px Green";
+  
+  
+  }
+  function myRevus2() {
+    document.getElementById("Revus").style.boxShadow = "0px 0px 0px ";
+  
+  
+  }
+  function mysolubour() {
+    document.getElementById("solubour").style.boxShadow = "0px 0px 15px Green";
+  
+  
+  }
+  function mysolubour2() {
+    document.getElementById("solubour").style.boxShadow = "0px 0px 0px ";
+  
+  
+  }
+  </script>

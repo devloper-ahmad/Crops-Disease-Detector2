@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Poppins:ital,wght@0,400;0,500;1,500&family=Righteous&family=Unbounded:wght@900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <title>Crops Disease detector</title>
+</head>
+<style>
+   
+    #potaotoicon{
+        height: 30px;
+        width: 50px;
+    }
+    .navbar div ul li a:hover{
+        background-color: rgb(0, 255, 60);
+        border-radius:13px ;
+        color: rgb(0, 0, 0);
+
+    }
+ .nav-link :active{
+        background-color: rgb(15, 16, 15) ;
+    }
+    .col-sm-3 div button:hover{
+      color: rgba(2, 2, 2, 0.297);
+    }
+
+
+</style>
+<body>
+  <nav class="navbar navbar-expand-lg bg-success" >
+    <img src="/static/img/Potato.png" alt="" style="height: 40px;" class="position-absolute top-50 end-0 translate-middle img-fluid">
+<div class="container-fluid"   id="navbar">
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    
+  </button>
+ 
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item me-2">
+      <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/%2F" style="color:white; font-family: 'Poppins', sans-serif; font-size: 20px;  ">Home</a>
+    </li>
+   
+    <li class="nav-item dropdown"  >
+      <a class="nav-link dropdown-toggle me-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"  style="color:white; font-family: 'Poppins', sans-serif; font-size: 20px;  
+      border-radius:13px ;
+      ">
+        Disease
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/diseasedetail/1">Black Scruf</a></li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/diseasedetail/2">Pink Root</a></li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/diseasedetail/3">LateBlight</a></li>
+      </ul>
+    </li>
+      <li class="nav-item me-2">
+        <a class="nav-link" href="http://127.0.0.1:8000/Research1/" style="color:white; font-family: 'Poppins', sans-serif; font-size: 20px;">Reasearch</a>
+      </li>
+
+      
+
+    <li class="nav-item dropdown"  >
+      <a class="nav-link dropdown-toggle me-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"  style="color:white; font-family: 'Poppins', sans-serif; font-size: 20px;background-color: rgb(0, 255, 60);border-radius:13px ;
+      ">
+        Medicines
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/1">Amistar Top</a></li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/2">CELEST</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/11">Revus</a></li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/5">Enrich</li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/6">GRAMOXONE</li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/9">Nayapotash</li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/10">NayaZinc</li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/7">Isabion</li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/12">Solubour</li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/3">Dragon</li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/8">Miravis Duo</li>
+        <li><a class="dropdown-item" href="http://127.0.0.1:8000/Amistar/4">Dual Gold</li>
+        
+
+        
+        
+        
+         
+        
+      </ul>
+    </li>
+  <a href="{%url 'login'%}" style="position: absolute; left:75%"><button type="button" class="btn btn-light">Logout</button></a>
+  </ul>
+  
+</div>
+</div>
+</nav>
+
+<div class="container text-center">
+    <div class="row">
+      <div class="col-sm-6 mb-sm-0">
+      <img src="/media/{MedicineData.Medicine_logo}" alt="" class="img-fluid" style="height: 220px;">
+      <img src="/media/{{MedicineData.Medicine_img}}" alt="" class="img-fluid mt-5" style="height: 220px;   position:absolute; top:10%; left:10%; ">
+      <a href="http://127.0.0.1:8000/order1/"><button type="button" class="btn btn-success col-sm-2 mb-sm-0 mt-5 ms-5" >Order Now</button></a>
+      </div>
+      <div class="col-sm-6 mb-sm-0 mt-2" >
+      <h1 class="mt-5 text-center" style="font-size: 40px;font-family: ''Volkhov', serif';">Product overview</h1>
+      <p class="mt-5 text-center" style="color: rgb(28, 28, 28); font-family: 'Poppins', sans-serif;background-color: rgb(234, 255, 251);">{{MedicineData.Product_desc}}</p>
+      </div>
+    
+    </div>
+  </div>
+
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-sm-12 mb-sm-0">
+        <h1 class="mt-5 text-center" style="font-family: ''Volkhov', serif';font-size: 60px;">{{MedicineData.Medicine_title}}</h1>
+        <table class="container table table-hover mt-5">
+            <thead>
+      <div class="col-sm-12 mb-sm-0">
+              <tr class="bg-success" style="color: white;font-family: ''Volkhov', serif';font-size: 20px; ">
+            
+                <th scope="col-sm-3 mb-sm-0">Pack Size</th>
+                <th scope="col-sm-3 mb-sm-0">Composition</th>
+                <th scope="col-sm-3 mb-sm-0">Mode of action</th>
+                <th scope="col-sm-3 mb-sm-0">Formulation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-light" style="color: rgb(28, 28, 28); font-family: 'Poppins', sans-serif;">
+                <td scope="col-sm-3 mb-sm-0">{{MedicineData.Pack_size}}</td>
+                <td scope="col-sm-3 mb-sm-0">{{MedicineData.Composition}}</td>
+                <td scope="col-sm-3 mb-sm-0">{{MedicineData.Mode_of_action}}</td>
+                <td scope="col-sm-3 mb-sm-0">{{MedicineData.Formulation}}</td>
+       
+               
+               
+              </tr>
+            
+            </tbody>
+          </table>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-sm-12 mb-sm-0">
+      
+        <table class="container table table-hover mt-5">
+            <thead>
+      <div class="col-sm-12 mb-sm-0">
+              <tr class="bg-success" style="color: white;font-family: ''Volkhov', serif';font-size: 20px; ">
+            
+                <th scope="col-sm-3 mb-sm-0">Crops</th>
+                <th scope="col-sm-3 mb-sm-0">Pests</th>
+                <th scope="col-sm-3 mb-sm-0">Dose</th>
+            
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-light" style="color: rgb(28, 28, 28); font-family: 'Poppins', sans-serif;">
+                <td scope="col-sm-3 mb-sm-0">{{MedicineData.Crops}}</td>
+                <td scope="col-sm-3 mb-sm-0">{{MedicineData.Pests}}</td>
+                <td scope="col-sm-3 mb-sm-0">{{MedicineData.Dose}}</td>
+             
+       
+               
+               
+              </tr>
+            
+            </tbody>
+          </table>
+      </div>
+      
+    </div>
+  </div>
+  
+  <h1 class="mt-5 ms-5">Related Products</h1>
+  <div class="container text-center mt-5 "  >
+    <div class="row">
+        <div class="col-sm-3 mb-sm-0 d-flex justify-content-evenly">
+            <div class="" style="width: 40rem; box-shadow: 5px 5px 15px rgb(170, 168, 168); border-radius: 13px; cursor: pointer;" id="Revus" onmouseover="myRevus()"onmouseout="myRevus2()">
+              <img src="/static/img/Revus logo.png" class="card-img-top img-fluid " alt="..." style="width: 200px;">
+  
+              <img src="/static/img/Revus.png" class="card-img-top img-fluid mt-3" alt="..." style="width: 80px; height:200px;">
+              <div class="card-body">
+                <h5 class="card-title mt-3" style="font-weight: bolder;">Revus</h5>
+                <p class="card-text mt-3 text-center"  style=" font-family: 'Poppins', sans-serif;">A unique contact and translaminar fungicide used for management of downy mildew .</p>
+                <a href="http://127.0.0.1:8000/Amistar/11" class="btn btn-success mb-0" style=" font-family: 'Poppins', sans-serif;">Read More
+                  <i class="bi bi-forward ms-2 mt-2"></i></a>
+              </div>
+            </div>
+      
+          </div>
+      <div class="col-sm-3 mb-sm-0 d-flex justify-content-evenly">
+        <div class="" style="width: 40rem; box-shadow: 5px 5px 15px rgb(170, 168, 168); border-radius: 13px; cursor: pointer;"id="medicine2" onmouseover="myFunction9()" onmouseout="myFunction10()">
+          <img src="/static/img/CELEST LOGO.png" class="card-img-top img-fluid " alt="..." style="width: 200px;">
+
+          <img src="/static/img/CELEST.png" class="card-img-top img-fluid mt-1" alt="..." style="width: 76px;">
+          <div class="card-body">
+            <h5 class="card-title mt-3" style="font-weight: bolder;">CELEST</h5>
+            <p class="card-text mt-3 text-center"  style=" font-family: 'Poppins', sans-serif;">A broad spectrum seed treatment solution which is highly effective on potato.</p>
+            <a href="http://127.0.0.1:8000/Amistar/2" class="btn btn-success" style=" font-family: 'Poppins', sans-serif;">Read More
+              <i class="bi bi-forward ms-2 mt-2"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 mb-sm-0 d-flex justify-content-evenly">
+        <div class="" style="width: 40rem; box-shadow: 5px 5px 15px rgb(170, 168, 168); border-radius: 13px; cursor: pointer;" id="dragon" onmouseover="mydragon()" onmouseout="mydragon2()">
+          <img src="/static/img/dragon logo.png" class="card-img-top img-fluid " alt="..." style="width: 200px;">
+
+          <img src="/static/img/dragon.png" class="card-img-top img-fluid mt-3" alt="..." style="width: 133px;">
+          <div class="card-body">
+            <h5 class="card-title mt-3" style="font-weight: bolder;">Dragon</h5>
+            <p class="card-text mt-3 text-center"  style=" font-family: 'Poppins', sans-serif;">A broad spectrum seed treatment solution which is highly effective on potato.</p>
+            <a href="http://127.0.0.1:8000/Amistar/3" class="btn btn-success " style=" font-family: 'Poppins', sans-serif;">Read More
+              <i class="bi bi-forward ms-2 mt-2"></i></a>
+          </div>
+        </div>
+       
+      </div>
+      <div class="col-sm-3 mb-sm-0 d-flex justify-content-evenly">
+        <div class="" style="width: 40rem; box-shadow: 5px 5px 15px rgb(170, 168, 168); border-radius: 13px; cursor: pointer;" id="Dualgold" onmouseover="myDualgold()" onmouseout="myDualgold2()">
+          <img src="/static/img/DualGold logo.png" class="card-img-top img-fluid " alt="..." style="width: 200px;">
+
+          <img src="/static/img/Dual Gold.png" class="card-img-top img-fluid mt-3" alt="..." style="width: 80px;">
+          <div class="card-body">
+            <h5 class="card-title mt-3" style="font-weight: bolder;">Dual Gold</h5>
+            <p class="card-text mt-3 text-center"  style=" font-family: 'Poppins', sans-serif;">DUAL® GOLD 960 EC is a pre-emergence herbicide with formulation of and emulsifying concentrate .</p>
+            <a href="http://127.0.0.1:8000/Amistar/4" class="btn btn-success mb-0" style=" font-family: 'Poppins', sans-serif;">Read More
+              <i class="bi bi-forward ms-2 mt-2"></i></a>
+          </div>
+        </div>
+       
+        
+      </div>
+    </div>
+  
+    <div class="container-xxl text-center mt-3" style="background-color: rgb(234, 255, 251); position: relative; height: 670px;">
+      
+      <div class="row">
+        <div class="col-sm-6 mb-sm-0">
+          <h1 class="mt-5 ms-2 col-sm-5">Contact Us</h1>
+          <div class="mb-3 mt-3 col-sm-5 ms-5">
+            
+          <form action="" method="post" style="position: relative;">
+            {% csrf_token %}
+            
+            <input type="text" name="name" class="form-control" placeholder="Name">
+            <br>
+            <br>
+            
+            
+            <input type="email" name="email" id=""class="form-control" placeholder="Email Address">
+            <br><br>
+            <label for="" ></label>
+           
+            <textarea name="subject" id="" cols="30" rows="10"class="form-control" placeholder="Message"></textarea>
+            <br>
+            <input type="submit" class="btn btn-success" value="Submit"style="position: absolute;left:50%;">
+          </form>
+          </div>
+         
+   
+         
+  
+      
+        </div>
+        
+        <div class="col-sm-3 mb-sm-0 mt-5">
+          <div class="row">
+            <h4>About</h4>
+  
+          </div>
+          <div class="row mt-3" >
+            <a href="http://127.0.0.1:8000/About1/1"><button type="button" class="btn " >Our Story</button></a>
+  
+          </div>
+          <div class="row mt-3">
+          <a href="http://127.0.0.1:8000/About1/2">
+            <button type="button" class="btn " >Careers</button></a>
+  
+          </div>
+          <div class="row mt-3">
+            <a href="http://127.0.0.1:8000/About1/3">
+            <button type="button" class="btn " >Benefits</button></a>
+  
+          </div>
+          <div class="row mt-3">
+            <a href="http://127.0.0.1:8000/About1/4">
+            <button type="button" class="btn " >Teams</button></a>
+  
+          </div>
+        </div>
+        <div class="col-sm-3 mb-sm-0 mt-5">
+          <div class="row">
+            <h4>LEGAL</h4>
+  
+          </div>
+          <div class="row mt-3" >
+            <a href="http://127.0.0.1:8000/About1/5">
+            <button type="button" class="btn " >Terms & Conditions</button></a>
+  
+          </div>
+          <div class="row mt-3">
+            <a href="http://127.0.0.1:8000/About1/6">
+            <button type="button" class="btn " >Privacy Policy</button></a>
+  
+          </div>
+          <div class="row mt-3">
+            <a href="http://127.0.0.1:8000/About1/7">
+            <button type="button" class="btn " >Terms of Use</button> </a>
+  
+          </div>
+      
+        </div>
+         
+        </div>
+        <a href="" class="btn mt-5 ">
+          <img src="Facebook icon.png" alt="" class="img-fluid" style="width: 30px;">
+        </a>
+        <a href="" class="btn mt-5 ">
+          <img src="Instagram icon.png" alt="" class="img-fluid" style="width: 30px;">
+        </a>
+        <a href="" class="btn mt-5 ">
+          <img src="Whatsapp icon.png" alt="" class="img-fluid" style="width: 30px;">
+        </a>
+        <a href="" class="btn mt-5 ">
+          <img src="twitter (2).png" alt="" class="img-fluid" style="width: 30px;">
+        </a>
+      </div>
+     
+    </div>
+  
+  
+</body>
+</html>
+
+<script>
+    function myFunction() {
+  document.getElementById("Blackscruf").style.boxShadow = "0px 0px 15px Green";
+
+}
+function myFunction2() {
+  document.getElementById("Blackscruf").style.boxShadow = "0px 0px 0px ";
+
+  
+}
+function myFunction3() {
+
+  document.getElementById("Pinkroot").style.boxShadow = "0px 0px 15px Green";
+  
+}
+function myFunction4() {
+
+  document.getElementById("Pinkroot").style.boxShadow = "0px 0px 0px ";
+  
+}
+
+function myFunction5() {
+  document.getElementById("LateBlight").style.boxShadow = "0px 0px 15px Green";
+
+
+}
+function myFunction6() {
+  document.getElementById("LateBlight").style.boxShadow = "0px 0px 0px ";
+
+
+}
+
+function myFunction7() {
+  document.getElementById("medicine").style.boxShadow = "0px 0px 15px Green";
+
+
+}
+function myFunction8() {
+  document.getElementById("medicine").style.boxShadow = "0px 0px 0px ";
+
+
+}
+
+function myFunction9() {
+  document.getElementById("medicine2").style.boxShadow = "0px 0px 15px Green";
+
+
+}
+function myFunction10() {
+  document.getElementById("medicine2").style.boxShadow = "0px 0px 0px ";
+
+
+}
+function mydragon() {
+  document.getElementById("dragon").style.boxShadow = "0px 0px 15px Green";
+
+
+}
+function mydragon2() {
+  document.getElementById("dragon").style.boxShadow = "0px 0px 0px ";
+
+
+}
+function myDualgold() {
+  document.getElementById("Dualgold").style.boxShadow = "0px 0px 15px Green";
+
+
+}
+function myDualgold2() {
+  document.getElementById("Dualgold").style.boxShadow = "0px 0px 0px ";
+
+
+}
+function myRevus() {
+  document.getElementById("Revus").style.boxShadow = "0px 0px 15px Green";
+
+
+}
+function myRevus2() {
+  document.getElementById("Revus").style.boxShadow = "0px 0px 0px ";
+
+
+}
+</script>
