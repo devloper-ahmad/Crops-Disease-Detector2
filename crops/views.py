@@ -123,8 +123,8 @@ def Amistar(request, Amistarid):
 
 def login(request):
     if request.method == 'POST':
-        username = request.POST.get('uname')
-        pass1 = request.POST.get('pass')
+        username = request.POST.get('username')
+        pass1 = request.POST.get('typePasswordX')
         user = authenticate(request, username=username, password=pass1)
         if user is not None:
             auth_login(request, user)
